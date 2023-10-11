@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: surkim <surkim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hyungjuk <hyungjuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:47:05 by hyungjuk          #+#    #+#             */
-/*   Updated: 2023/10/05 13:30:10 by surkim           ###   ########.fr       */
+/*   Updated: 2023/10/11 11:38:14 by hyungjuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 int	parsing_cmd2(t_msh *msh, char *cmd)
 {
 	if (set_heredoc_and_tmp_file(msh->token_list, msh) == ERROR)
+	{
+		free(cmd);
 		return (ERROR);
+	}
 	remove_white_space_token(&msh->token_list);
 	redefine_status_of_token(msh->token_list);
 	make_list_array(msh);
