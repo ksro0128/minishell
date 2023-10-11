@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_echo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: surkim <surkim@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hyungjuk <hyungjuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 19:01:52 by hyungjuk          #+#    #+#             */
-/*   Updated: 2023/10/05 12:00:14 by surkim           ###   ########.fr       */
+/*   Updated: 2023/10/11 12:39:12 by hyungjuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,11 @@ int	ft_echo(t_msh *msh, char **arg)
 	int		last_newline;
 
 	i = 1;
-	last_newline = check_valid_option(arg[1]);
-	if (last_newline == SUCCESS)
-		i ++;
+	last_newline = check_valid_option(arg[i]);
+	while (last_newline == SUCCESS)
+		last_newline = check_valid_option(arg[++ i]);
+	if (i != 1)
+		last_newline = SUCCESS;
 	if (arg[i])
 	{
 		printf("%s", arg[i]);
