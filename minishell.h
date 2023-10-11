@@ -6,7 +6,7 @@
 /*   By: hyungjuk <hyungjuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:17:05 by hyungjuk          #+#    #+#             */
-/*   Updated: 2023/10/11 11:02:55 by hyungjuk         ###   ########.fr       */
+/*   Updated: 2023/10/11 13:48:37 by hyungjuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,6 @@
 # define C_PIPE '|'
 # define C_R_SHIFT '<'
 # define C_L_SHIFT '>'
-// <x c'at' >>y | <x cat |<<lim<x<y cat >> zz
 
 int	g_c_signal;
 
